@@ -1,0 +1,6 @@
+# Ignore services
+DISK:server1
+*:server2
+
+# Ignore some HTML elements
+ignore:passiveonly.gif
