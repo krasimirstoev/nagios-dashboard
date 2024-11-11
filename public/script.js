@@ -58,3 +58,34 @@ setInterval(updateData, 5000);
 // Initial data fetch and current time update
 updateData();
 updateCurrentTime();
+
+// Function to fetch and display exclude list content in modal
+document.getElementById("exclude-btn").addEventListener("click", async () => {
+    console.log("Exclude button clicked"); // Debugging line
+    const excludeModal = document.getElementById("exclude-modal");
+    excludeModal.style.display = "flex"; // Show the modal
+    
+    try {
+        const response = await fetch('/get-exclude');
+        const text = await response.text();
+        document.getElementById("exclude-content").textContent = text; // Display plain text in <pre>
+    } catch (error) {
+        document.getElementById("exclude-content").textContent = "Error loading exclude list.";
+        console.error('Error fetching exclude list:', error);
+    }
+});
+
+// Close modal when the close button is clicked
+document.querySelector(".close").onclick = function() {
+    console.log("Close button clicked"); // Debugging line
+    document.getElementById("exclude-modal").style.display = "none";
+};
+
+// Close modal when clicking outside the modal content
+window.onclick = function(event) {
+    const excludeModal = document.getElementById("exclude-modal");
+    if (event.target === excludeModal) {
+        console.log("Clicked outside modal"); // Debugging line
+        excludeModal.style.display = "none";
+    }
+};

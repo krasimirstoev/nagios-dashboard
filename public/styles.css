@@ -89,7 +89,7 @@ tr.warning {
 }
 
 .modal {
-    display: none;
+    display: none; /* Hidden by default */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -106,8 +106,10 @@ tr.warning {
     padding: 20px;
     border-radius: 8px;
     width: 50%;
+    max-with: 600px;
     color: black;
     text-align: left;
+    position: relative;
 }
 
 .close {
