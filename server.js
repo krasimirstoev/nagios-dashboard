@@ -45,6 +45,18 @@ fs.watchFile(config.excludeFilePath, () => {
     loadExclusions();
 });
 
+// Serve the contents of exclude.txt as plain text
+app.get('/get-exclude', (req, res) => {
+    fs.readFile(config.excludeFilePath, 'utf-8', (err, data) => {
+        if (err) {
+            res.status(500).send("Error loading exclude list.");
+            return;
+        }
+        res.type('text/plain');  // Set the response type to plain text
+        res.send(data);           // Send the content of exclude.txt
+    });
+});
+
 // Function to parse the duration and convert it to days
 const parseDurationToDays = (duration) => {
     const durationMatch = duration.match(/(\d+)d\s+(\d+)h\s+(\d+)m/);

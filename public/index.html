@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagios Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="header">
+    <h1 id="title">Monitoring TV</h1>
+    <div id="header-info">
+        <div id="active-count"></div>
+        <div id="total-criticals"></div>
+        <div id="last-check"></div>
+        <div id="time">Current time: <span id="current-time"></span></div>
+    </div>
+    <div id="header-buttons">
+        <button id="refresh-btn">Refresh</button>
+        <button id="exclude-btn">Exclude List</button>
+    </div>
+</div>
+    
+    <!-- Modal for Exclude List -->
+    <div id="exclude-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Exclude List</h2>
+            <pre id="exclude-content"></pre>
+        </div>
+    </div>
+
+    <!-- Alerts section -->
+    <div id="alerts">
+        <table id="alerts-table">
+            <thead>
+                <tr>
+                    <th>Host</th>
+                    <th>Service</th>
+                    <th>Status</th>
+                    <th>Last Check</th>
+                    <th>Duration</th>
+                    <th>Attempt</th>
+                    <th>Service Information</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Load moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
