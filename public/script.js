@@ -1,3 +1,8 @@
+// Custom User-Agent for all fetch requests
+const customHeaders = {
+    'User-Agent': 'Nagios-dashboard/1.0 (https://github.com/krasimirstoev/nagios-dashboard)'
+};
+
 // Array to store timestamps and counts of criticals for the last 60 minutes
 let criticalsLog = [];
 
