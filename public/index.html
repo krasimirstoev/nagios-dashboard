@@ -18,40 +18,62 @@
     <div id="header-buttons">
         <button id="refresh-btn">Refresh</button>
         <button id="exclude-btn">Exclude List</button>
+        <button id="settings-btn">Settings</button>
     </div>
 </div>
-    
-    <!-- Modal for Exclude List -->
-    <div id="exclude-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Exclude List</h2>
-            <pre id="exclude-content"></pre>
-        </div>
+
+<!-- Modal for Exclude List -->
+<div id="exclude-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Exclude List</h2>
+        <pre id="exclude-content"></pre>
     </div>
+</div>
 
-    <!-- Alerts section -->
-    <div id="alerts">
-        <table id="alerts-table">
-            <thead>
-                <tr>
-                    <th>Host</th>
-                    <th>Service</th>
-                    <th>Status</th>
-                    <th>Last Check</th>
-                    <th>Duration</th>
-                    <th>Attempt</th>
-                    <th>Service Information</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+<!-- Modal for Settings (Filters) -->
+<div id="settings-modal" class="modal">
+    <div class="modal-content">
+        <span class="close close-settings">&times;</span>
+        <h2>Settings</h2>
+        <label for="severity-filter">Severity:</label>
+        <select id="severity-filter">
+            <option value="all">All</option>
+            <option value="critical">Critical</option>
+            <option value="warning">Warning</option>
+        </select>
+
+        <label for="host-filter">Host:</label>
+        <select id="host-filter">
+            <option value="all">All</option>
+        </select>
+
+        <button id="apply-settings-btn">Apply</button>
     </div>
+</div>
 
-    <!-- Load moment.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+<!-- Alerts section -->
+<div id="alerts">
+    <table id="alerts-table">
+        <thead>
+            <tr>
+                <th>Host</th>
+                <th>Service</th>
+                <th>Status</th>
+                <th>Last Check</th>
+                <th>Duration</th>
+                <th>Attempt</th>
+                <th>Service Information</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
 
-    <script src="script.js"></script>
+<!-- Load moment.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>

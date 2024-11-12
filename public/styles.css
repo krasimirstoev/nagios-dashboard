@@ -14,6 +14,7 @@ body {
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     color: white;
+    flex-wrap: wrap;
 }
 
 #title {
@@ -27,7 +28,7 @@ body {
 #header-info {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
     font-size: 1em;
     color: #cccccc;
     text-align: left;
@@ -35,7 +36,8 @@ body {
 
 #header-buttons {
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 #time {
@@ -106,7 +108,7 @@ tr.warning {
     padding: 20px;
     border-radius: 8px;
     width: 50%;
-    max-with: 600px;
+    max-width: 600px;
     color: black;
     text-align: left;
     position: relative;
