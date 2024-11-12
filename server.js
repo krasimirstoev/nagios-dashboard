@@ -144,6 +144,9 @@ const applyExclusions = () => {
     criticals = criticals.filter(c => !exclusions.some(e => e.service === '*' && e.host === c.host || e.service === c.service && e.host === c.host));
 };
 
+// Custom User-Agent header
+const userAgent = 'Nagios-dashboard/1.0 (https://github.com/krasimirstoev/nagios-dashboard)';
+
 // Function to fetch data from the Nagios server
 const fetchNagiosData = async () => {
     try {
@@ -151,7 +154,10 @@ const fetchNagiosData = async () => {
             auth: {
                 username: config.auth.username,
                 password: config.auth.password
-            }
+            },
+	    headers: {
+		'User-Agent': userAgent
+	   }
         });
         const data = response.data;
 
